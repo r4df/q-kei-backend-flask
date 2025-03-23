@@ -1,1 +1,22 @@
-/venv
+# Virtual Environment
+venv/
+
+# Environment Variables
+.env
+
+# Python Cache & Compiled Files
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+# SQLite Database (if using SQLite)
+instance/
+*.db
+*.sqlite3
+
+# VS Code & System Files
+.vscode/
+.DS_Store  # macOS system file
