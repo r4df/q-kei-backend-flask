@@ -3,6 +3,9 @@ from flask import jsonify, request
 
 from .functions import WON_DRAW, MOVE_O, check_winner, get_best_move, get_available_move
 
+@proj_tictactoe_bp.route("/test", methods=["POST"])
+def r_test():
+    return jsonify({"resp":"test OK!"})
 
 @proj_tictactoe_bp.route("/checkwinner", methods=["POST"])
 def r_checkwinner():
