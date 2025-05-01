@@ -31,9 +31,9 @@ def check_winner(board: array) -> int:
             if all(move_val is not None for move_val in (a, b, c)):
                 if (a == b) and (a == c):
                     winner = a
-                    return winner  # Winner detected
+                    return [winner, combination] # Winner detected
 
-        return MOVE_N  # No winner detected
+        return [None, None]  # No winner detected
 
     except Exception as e:
 
@@ -52,7 +52,8 @@ def update_board(board: array, player: int, position: int) -> array:
 
 def minimax(board: array, player: int):
 
-    winner = check_winner(board)
+    check_winner_result = check_winner(board)
+    winner = check_winner_result[0]
 
     if winner == MOVE_X:
         return -1  # X Won
