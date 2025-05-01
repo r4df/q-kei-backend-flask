@@ -23,3 +23,7 @@ from .services.login import login_bp
 
 app.register_blueprint(home_bp)
 app.register_blueprint(login_bp, url_prefix = "/login")
+
+# Projects
+from .services.projects.tictactoe import proj_tictactoe_bp
+app.register_blueprint(proj_tictactoe_bp, url_prefix = "/proj/tictactoe")
