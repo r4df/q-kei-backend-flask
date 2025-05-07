@@ -12,9 +12,8 @@ app = Flask(__name__)
 app.secret_key = 'your-secret-key'
 
 # ########## CORS ##########
-frontend_url = os.getenv("FRONTEND_URL")
-print(frontend_url)
-CORS(app, origins=[frontend_url])
+FRONTEND_URL = os.getenv("FRONTEND_URL")
+CORS(app, origins=[FRONTEND_URL])
 
 # ########## Login Mgr ##########
 login_manager = LoginManager()
