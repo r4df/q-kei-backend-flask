@@ -1,13 +1,18 @@
 from flask import Flask
 from flask_cors import CORS
 from flask_login import LoginManager
+from dotenv import load_dotenv
+import os
+
 
 from .models import User
 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key'
 
-CORS(app)
+# ########## CORS ##########
+frontend_url = os.getenv("FRONTEND_URL")
+CORS(app, origins=[frontend_url])
 
 login_manager = LoginManager()
 login_manager.init_app(app)
