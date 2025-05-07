@@ -4,14 +4,16 @@ from flask_login import LoginManager
 from dotenv import load_dotenv
 import os
 
-
 from .models import User
+
+load_dotenv()  # Load from .env if present
 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key'
 
 # ########## CORS ##########
 frontend_url = os.getenv("FRONTEND_URL")
+print(frontend_url)
 CORS(app, origins=[frontend_url])
 
 # ########## Login Mgr ##########
