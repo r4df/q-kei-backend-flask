@@ -14,6 +14,7 @@ app.secret_key = 'your-secret-key'
 frontend_url = os.getenv("FRONTEND_URL")
 CORS(app, origins=[frontend_url])
 
+# ########## Login Mgr ##########
 login_manager = LoginManager()
 login_manager.init_app(app)
 @login_manager.user_loader
