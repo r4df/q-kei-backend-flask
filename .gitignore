@@ -20,3 +20,5 @@ instance/
 # VS Code & System Files
 .vscode/
 .DS_Store  # macOS system file
+
+*.pkl
