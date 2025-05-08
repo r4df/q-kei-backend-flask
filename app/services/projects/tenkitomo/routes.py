@@ -2,11 +2,6 @@ from . import proj_tenkitomo_bp
 from flask import jsonify, request
 import joblib
 
-# Load models
-
-drying_time_model = joblib.load('app/services/projects/tenkitomo/models/drying_time_model.pkl')
-recommendation_model = joblib.load('app/services/projects/tenkitomo/models/recommendation.pkl')
-
 @proj_tenkitomo_bp.route("/test", methods=["POST"])
 def r_test():
     return jsonify({"resp": "Tenkitomo test OK!"})
@@ -15,6 +10,8 @@ def r_test():
 def predict():
     
     try:
+        drying_time_model = joblib.load('app/services/projects/tenkitomo/models/drying_time_model.pkl')
+        recommendation_model = joblib.load('app/services/projects/tenkitomo/models/recommendation.pkl')
         data = request.get_json()
 
         # Extract weather feature
